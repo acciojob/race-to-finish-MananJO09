@@ -11,16 +11,11 @@ function createPromise() {
   });
 }
 
-const promises = [];
-for (let i = 0; i < 5; i++) {
-  promises.push(createPromise());
-}
-
 Promise.any(promises)
   .then((result) => {
-    const outputDiv = document.getElementById('output');
-    outputDiv.innerText = `The first promise resolved with ${result} milliseconds.`;
+    const outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `The first promise resolved in ${result} milliseconds.`;
   })
   .catch((error) => {
-    console.error(error);
+    console.error("An error occurred:", error);
   });
