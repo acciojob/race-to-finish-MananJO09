@@ -22,5 +22,6 @@ Promise.any(promises)
     console.error("An error occurred:", error);
   });
 }
+}
 
 
